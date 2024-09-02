@@ -1,0 +1,72 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+
+  .hero-section {
+    background-color: #f2f2f2;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #7f8c8d;
+    }
+
+    .explore-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: #ffffff;
+      background-color: #2980b9;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #3498db;
+      }
+    }
+  }
+
+  .info-section {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #34495e;
+    }
+
+    p {
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      color: #95a5a6;
+    }
+
+    .about-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: #ffffff;
+      background-color: #e67e22;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #d35400;
+      }
+    }
+  }
+}

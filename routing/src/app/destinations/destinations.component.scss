@@ -1,0 +1,61 @@
+.destinations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+  }
+
+  .destination-card {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+
+    .destination-image {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 2rem;
+    }
+
+    .destination-info {
+      text-align: left;
+
+      h2 {
+        font-size: 1.75rem;
+        color: #34495e;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.15rem;
+        color: #7f8c8d;
+        margin-bottom: 1.5rem;
+      }
+
+      .view-details-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        color: #ffffff;
+        background-color: #2980b9;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #3498db;
+        }
+      }
+    }
+  }
+}
