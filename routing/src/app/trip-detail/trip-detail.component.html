@@ -10,13 +10,6 @@
     <p>{{ trip.description }}</p>
   </div>
 
-  <div class='gallery-section'>
-    <h2>Photo Gallery</h2>
-    <div class='gallery'>
-      <!--      <img *ngFor='let photo of trip.photos' [src]='photo' alt='Trip photo'/>-->
-    </div>
-  </div>
-
   <div class='map-section'>
     <h2>Location Map</h2>
     <!-- Embed a Google Map or any map component here -->
@@ -28,17 +21,12 @@
     </div>
   </div>
 
-  <div class='reviews-section'>
-    <h2>User Reviews</h2>
-    @for (review of trip.reviews; track review) {
-      <div class='review'>
-        <p><strong>{{ review.user }}</strong></p>
-        <p>{{ review.comment }}</p>
-        <p class='rating'>Rating: {{ review.rating }} / 5</p>
-      </div>
-    }
-
+  <div class="tabs tabs-section">
+    <h2 (click)="navigateToChildRoute('gallery')">Photo Gallery</h2>
+    <h2 (click)="navigateToChildRoute('reviews')">User Reviews</h2>
   </div>
 
+  <router-outlet/>
+  
   <button routerLink='/destinations' class='back-button'>Back to Destinations</button>
 </div>

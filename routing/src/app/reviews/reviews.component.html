@@ -1,0 +1,11 @@
+<div class="trip-detail-container">
+    <div class='reviews-section'>
+        @for (review of trip.reviews; track review) {
+        <div class='review'>
+            <p><strong>{{ review.user }}</strong></p>
+            <p>{{ review.comment }}</p>
+            <p class='rating'>Rating: {{ review.rating }} / 5</p>
+        </div>
+        }
+    </div>
+</div>

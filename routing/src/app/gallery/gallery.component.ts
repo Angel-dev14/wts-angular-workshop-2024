@@ -1,17 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-trip-detail',
+  selector: 'app-gallery',
   standalone: true,
-  imports: [
-    RouterLink, RouterOutlet
-  ],
-  templateUrl: './trip-detail.component.html',
-  styleUrl: './trip-detail.component.scss'
+  imports: [CommonModule],
+  templateUrl: './gallery.component.html',
+  styleUrl: '../trip-detail/trip-detail.component.scss'
 })
-export class TripDetailComponent {
-
+export class GalleryComponent {
   readonly trip = {
     title: "Tropical Paradise in Bali",
     location: "Bali, Indonesia",
@@ -43,11 +40,4 @@ export class TripDetailComponent {
       }
     ]
   };
-
-  constructor(private router: Router) { }
-
-  navigateToChildRoute(route: string) {
-    this.router.navigate([`/trip-detail/${route}`]);
-  }
-
 }

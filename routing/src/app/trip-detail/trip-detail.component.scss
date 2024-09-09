@@ -30,6 +30,7 @@
   .info-section,
   .gallery-section,
   .map-section,
+  .tabs-section,
   .reviews-section {
     margin-bottom: 3rem;
 
@@ -96,5 +97,11 @@
     &:hover {
       background-color: #3498db;
     }
+  }
+
+  .tabs {
+    display: flex;
+    gap: 4rem;
+    cursor: pointer;
   }
 }

@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DestinationsComponent } from './destinations/destinations.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 export const routes: Routes = [
   {
@@ -16,15 +18,13 @@ export const routes: Routes = [
     path: 'trip-detail',
     loadComponent: () => import('./trip-detail/trip-detail.component')
       .then(c => c.TripDetailComponent),
+      children: [
+        { path: 'reviews', component: ReviewsComponent },
+        { path: 'gallery', component: GalleryComponent }
+      ]
   },
   {
     path: 'destinations',
     component: DestinationsComponent,
   }
 ];
-
-//   this will be child routes for trip-details
-//todo reviews nested route
-// { path: 'reviews', component: ReviewsComponent },
-//todo photo gallery nested route
-// { path: 'gallery', component: GalleryComponent },
