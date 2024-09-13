@@ -1,6 +1,24 @@
 <div class='gallery'>
   <app-frame
-    [imageName]='"picture.jpg"'
     [title]='"Picture 1"'>
+
+
+
+<!--    <ng-template #frameHeader>-->
+        <ng-container *frameHeader>
+          <app-my-custom-header></app-my-custom-header>
+        </ng-container>
+<!--    </ng-template>-->
+
+    <ng-template #frameActionFooter>
+      <app-frame-action-footer></app-frame-action-footer>
+    </ng-template>
+
+    <div icon>
+      &copy;
+    </div>
+
+    <img src='/assets/picture.jpg' alt=''>
+
   </app-frame>
 </div>

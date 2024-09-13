@@ -1,8 +1,43 @@
-<div class="frame">
-  <div class="frame-content">
-    <img src='/assets/{{imageName}}' alt=''>
+<div class='frame'>
+  <div class='frame-header'>
+    @if (toggle()) {
+<!--      <ng-content select='frame-header'></ng-content>-->
+      <ng-container [ngTemplateOutlet]='frameHeader()?.templateRef || defaultFrameHeader'></ng-container>
+    }
+    <app-icon>
+      <div ngProjectAs='[icon]'>
+        <ng-content select='[icon]'></ng-content>
+      </div>
+    </app-icon>
   </div>
-  <div class="frame-details">
-    <h3 class="frame-title">{{title}}</h3>
+  <div class='frame-content'>
+    <ng-content>
+      <img src='/assets/default.png' alt='default'>
+    </ng-content>
+  </div>
+  <div class='frame-details'>
+    <h3 class='frame-title'>{{ title }}</h3>
+  </div>
+  <div class='frame-footer'>
+    <button mat-button (click)='toggle.set(!toggle())'>
+      Toggle
+    </button>
+
+    <ng-container
+      [ngTemplateOutlet]='frameActionFooter() || defaultFrameFooter'
+      [ngTemplateOutletInjector]='injector'
+    >
+    </ng-container>
+
   </div>
 </div>
+
+<ng-template #defaultFrameHeader>
+  <h3>No Frame Header</h3>
+</ng-template>
+
+<ng-template #defaultFrameFooter>
+  <div>
+    {{ getDetails$() | async }}
+  </div>
+</ng-template>
